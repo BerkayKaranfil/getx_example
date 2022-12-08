@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:getx_example/controller.dart';
+import 'package:getx_example/language.dart';
 import 'package:getx_example/second_page.dart';
 
 void main() async{
@@ -20,6 +21,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // -------------------------------------------- Başına get yazıyoruzki her sayfada context'imize ulaşmamızı sağlıyor.
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      //Dil değiştirmek için.
+      translations: Messages(),
+      locale: Get.deviceLocale,
+      //
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -88,7 +94,22 @@ class MyHomePage extends StatelessWidget {
                 onPressed: () {
                   controller.temadegistir();
                 },
-                child: Text("Tema"))
+                child: Text("Tema")),
+                ElevatedButton(
+                onPressed: () {
+                  controller.arttir5();
+                },
+                child: Text("5arttir")),
+                ElevatedButton(
+                onPressed: () {
+                 // controller.arttir5();
+                },
+                child: Text("hello".tr)),
+                ElevatedButton(
+                onPressed: () {
+                  Get.updateLocale(Locale("tr","TR"));
+                },
+                child: Text("dil".tr))
           ],
         ),
       ),

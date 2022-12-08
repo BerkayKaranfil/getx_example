@@ -22,7 +22,11 @@ class Controller extends GetxController {
     temakaydet(isDark.value);
   }
 
-  //Get.snackbar("sayac", deger.)
+  arttir5(){
+    deger.value = deger.toInt() + 5;
+    Get.snackbar("sayac", deger.toString());
+  }
+  //Get.snackbar("sayac", deger.) // sayaç 5 5 artsın ve snacbarda yazsın.
 
   sayacarttir() {
     sayac.value = sayac.toInt() + 1;
@@ -53,4 +57,22 @@ class Controller extends GetxController {
   void onClose() {
     super.onClose();
   }
+
+
+
+  // --------------------------------------- // Aşağıdaki kodların, bu proje ile alakası yok!.
+  RxList dizi = [].obs;
+
+  asd() {
+    dizi.value.add({"name": "emre", "phone": "0538 332 23 32"});
+    dizi[0].value();
+  }
+
+  RxList diziz = [
+    {"name": "emre", "phone": "0538 332 23 32"},
+    {"name": "emre", "phone": "0538 332 23 32"},
+    {"name": "emre", "phone": "0538 332 23 32"}
+  ].obs;
+
+ // Rxn<Model>? ss;
 }
